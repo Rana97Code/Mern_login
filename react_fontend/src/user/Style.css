@@ -1,0 +1,18 @@
+.login{
+    margin-top: 100px;
+}
+
+.login-form{
+    border: 1px solid black;
+    max-width: 600px;
+    max-height: 550px;
+    margin-left: 700px;
+}
+
+.f-group{
+    padding: 15px;
+}
+
+.text-muted{
+    margin-left: 20px;
+}

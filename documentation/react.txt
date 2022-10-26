@@ -1,0 +1,150 @@
+					React Application
+
+
+** Have to install node.js in your pc.
+
+
+					Create New App
+
+** npx create-react-app app_name(All Small Letter)
+
+** npm start (Run The App)
+
+
+					Templete Set-up
+
+ //for update all package in the templete CMD:  npm-upgrade
+
+					Package Install
+
+//For React Bootstrap CMD:  npm install react-bootstrap bootstrap
+//For React Router Dome CMD: npm i react-router-dom
+
+
+
+					useParams
+
+	const {id} = useParams();
+
+    return (
+        <Container>
+            <Navbar className="Container">
+                <h2>Hello </h2>
+                <h2>My User Id - { id }</h2>
+                   
+            </Navbar>
+        </Container>
+  
+        );
+  }
+
+					map
+
+
+ 		{ users.map( user =>(
+                    <div className="user-preview" key={user.id}>
+                        <Link to={`/Profile/${user.id}`}>
+                            <h2> User ID- {user.id} </h2>
+                            <h2> User name- {user.name} </h2>
+                            <h2> User title- {user.title} </h2>
+                        </Link>
+                    </div>
+                  
+                ))}
+
+
+					//Back-End
+
+
+**Design All pages and form then have to create another folder for ----backend
+
+**after create a backend folder then open it on VS CODE
+**Then run a command in terminal 
+
+command: npm init
+
+
+**create a file name index.js
+
+ **Then we have to import express ..
+
+ **We can use two ways like ....
+
+ import express from "express"
+ const express = require("express")
+
+
+**if we use first way for importing then we have to add a line in package.json
+
+  "type": "module",
+
+**after the line "main":"index.js"
+
+
+
+**Then install express, mongoose and cors package Useing following command
+command:npm i express cors mongoose 
+
+
+**after installition all package then in index.js we have to configure 
+
+**below the import area we write those code 
+
+
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded())
+app.use(cors())
+
+mongoose.connect("mongodb://localhost:27017/myLoginApp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, ()=> {
+    console.log("DB connected")
+})
+
+
+
+**form mongoose.connect search from google we get this URL link mongodb://localhost:27017/myapp
+**myapp is the database name
+
+***Now Its times for routs
+
+// Routes
+
+app.post("/login", (req, res)=>{
+    res.send("Ranas Login API")
+})
+
+app.post("/register", (req, res)=>{
+    res.send("Ranas Register API")
+})
+
+app.listen(9002,()=>{
+    console.log("Be Started at port 9002")
+})
+
+***Then run the backend command
+
+node index.js
+
+**Check the views using following url
+http://localhost:9002/
+
+** For Getting database visual We can use 'robo 3T anoter name studio 3T' app 
+	my user email: rana.biswas.office@gmail.com
+	my user pass:rana97//
+
+
+
+
+
+
+
+
+
+
+
+
+
+

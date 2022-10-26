@@ -1,0 +1,15 @@
+.cont{
+    padding-top: 40px;
+    height: 80px;
+    background-color: gray;
+}
+
+.nav-item{
+    padding: 80px;
+    
+}
+
+.d-flex{
+    float: right;
+    margin-right: 50px;
+}
