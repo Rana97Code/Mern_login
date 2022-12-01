@@ -20,9 +20,9 @@ mongoose.connect("mongodb://localhost:27017/myLoginApp", {
 
 // Routes
 
-// app.get("/", (req, res)=>{
-//     res.send("My API")
-// })
+app.get("/", (req, res)=>{
+    res.send("My API")
+})
 
 
 app.post("/login", (req, res)=>{

@@ -1,3 +1,11 @@
+/* Start Design by rana */
+.navbar-ul{
+  display: inline-block;
+  padding: 10px;
+}
+
+/* End Design by rana */
+
 .App {
   text-align: center;
 }

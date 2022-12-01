@@ -10,8 +10,7 @@ import ProfileList from './user/ProfileList';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <div className="content">
+
         <Dashboard/>
           <Routes>
             <Route path="/Login" element={<Login/>} />
@@ -29,14 +28,11 @@ function App() {
           <Routes>
             <Route path="/Profile/:id" element={<Profile/>} />
           </Routes>
-          
-        
 
           <Routes>
             <Route path="/Register" element={<Register/>} />
           </Routes>
-        </div>
-      </div>
+
     </Router>
 
   );

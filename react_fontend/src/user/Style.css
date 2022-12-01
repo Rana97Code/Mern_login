@@ -1,12 +1,13 @@
 .login{
     margin-top: 100px;
+    padding-left: 370px;
 }
 
 .login-form{
     border: 1px solid black;
     max-width: 600px;
     max-height: 550px;
-    margin-left: 700px;
+    text-align: center;
 }
 
 .f-group{

@@ -37,7 +37,7 @@ function Register() {
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' value={user.name} onChange={handleChange} placeholder="Enter Name" />
                     <Form.Text className="text-muted">
-                       Name
+                       
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3 f-group" controlId="formEmail">
@@ -52,7 +52,7 @@ function Register() {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name="email" value={user.email} onChange={handleChange} placeholder="Enter email" />
                     <Form.Text className="text-muted">
-                        Email
+                        
                     </Form.Text>
                 </Form.Group>
 

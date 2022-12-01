@@ -1,3 +1,6 @@
+/* Start Design by rana */
+
+
 .cont{
     padding-top: 40px;
     height: 80px;
@@ -13,3 +16,18 @@
     float: right;
     margin-right: 50px;
 }
+
+.footer-area{
+    bottom: 0;
+    position: absolute;
+    background:skyblue;
+    width: 100%;
+}
+
+.footernav-ul li{
+    display: inline-block;
+    padding: 10px;
+    padding-right: 50px;
+  }
+  
+  /* End Design by rana */

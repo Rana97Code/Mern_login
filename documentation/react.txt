@@ -12,6 +12,8 @@
 
 
 					Templete Set-up
+ //in git downloaded project if there no node_module then run the command
+** npm install
 
  //for update all package in the templete CMD:  npm-upgrade
 
@@ -84,6 +86,10 @@ command: npm init
 
 **Then install express, mongoose and cors package Useing following command
 command:npm i express cors mongoose 
+
+
+**Then Install nodemon for auto reload and execute new change
+command: npm i nodemon
 
 
 **after installition all package then in index.js we have to configure 
