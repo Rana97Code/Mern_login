@@ -1,4 +1,7 @@
-					React Application
+Following tutorial : https://www.youtube.com/playlist?list=PL8p2I9GklV45Oiq7svCLT2xmOoCogUgrO	
+
+
+                        	React Application
 
 
 ** Have to install node.js in your pc.
@@ -55,7 +58,18 @@
                 ))}
 
 
+
+
+
+
+
+
+
 					//Back-End
+
+Need to set up database environment.
+Have to download Mongodb and Install it form: https://www.mongodb.com/try/download/community
+Check Version: mongod --version
 
 
 **Design All pages and form then have to create another folder for ----backend
@@ -114,6 +128,36 @@ mongoose.connect("mongodb://localhost:27017/myLoginApp", {
 **form mongoose.connect search from google we get this URL link mongodb://localhost:27017/myapp
 **myapp is the database name
 
+
+**** Connect Direct MongoDB Compass and get all data using this index.js code****
+
+import express from "express";
+import mongoose from "mongoose";
+import { connect, Schema, model } from "mongoose";
+const app = express();
+const connectDB= async ()=>{
+    mongoose.connect("mongodb://0.0.0.0:27017/loginapp");
+
+    const userSchema= new mongoose.Schema({}); //Schema for define table column
+    const users = mongoose.model('users', userSchema); // There users is table/collection name;
+    const data = await users.find(); //Find data
+    console.warn(data);
+}
+connectDB();
+app.listen(5000);
+
+
+** Then run the command below for get the output from mongoDB database
+command: npm start
+
+
+If it doesn't work then add the "start" line in package.json
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+
 ***Now Its times for routs
 
 // Routes
@@ -140,7 +184,6 @@ http://localhost:9002/
 ** For Getting database visual We can use 'robo 3T anoter name studio 3T' app 
 	my user email: rana.biswas.office@gmail.com
 	my user pass:rana97//
-
 
 
 
