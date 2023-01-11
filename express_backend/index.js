@@ -1,52 +1,21 @@
-// import express from "express"
-// // const express = require("express")
-// import mongoose from "mongoose"
-// import cors from "cors"
- 
 
-// const app = express()
-// app.use(express.json())
-// app.use(express.urlencoded())
-// app.use(cors())
+const express= require("express");
+const cors= require("cors");
+require('./db/config');
+const User = require("./db/User");
 
-import express from "express";
-import mongoose from "mongoose";
-import { connect, Schema, model } from "mongoose";
 const app = express();
-const connectDB= async ()=>{
-    mongoose.connect("mongodb://0.0.0.0:27017/loginapp"); ///mongodb://localhost:27017/myapp (sometimes localhost not work properly Then we use 0.0.0.0)
 
-    const userSchema= new mongoose.Schema({}); //Schema for define table column
-    const users = mongoose.model('users', userSchema); // There users is table/collection name;
-    const data = await users.find(); //Find data
-    console.warn(data);
-}
-connectDB();
+app.use(express.json()); //for receive data from form
+app.use(cors()); //cors as middlewair
+//Routes
+app.post("/register",async (req,resp)=>{
+    let user= new User(req.body);
+    let result = await user.save();
+    resp.send(result);
+})
+
+
+
 app.listen(5000);
 
-
-
-
-
-
-
-
-// Routes
-
-// app.get("/", (req, res)=>{
-//     res.send("My API")
-// })
-
-
-// app.post("/login", (req, res)=>{
-//     res.send("Ranas Login API")
-// })
-
-// app.post("/register", (req, res)=>{
-//     res.send("Ranas Register API")
-// })
-
-
-// app.listen(9002,()=>{
-//     console.log("Be Started at port 9002")
-// })

@@ -187,6 +187,56 @@ http://localhost:9002/
 
 
 
+*******************************IN Real Project***********************************
+
+
+
+
+
+///IN Real Project when I mastaring the backend process 
+
+
+*****In database section we create a config.js file and write those code****
+
+const mongoose= require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/loginapp"); //we use 127.0.0.1 Accept localhost
+
+
+
+****And Create a file like User.js in database section for connect with users table/collection*****
+const mongoose= require("mongoose");
+const userSchema= new mongoose.Schema({
+    user_name:String,
+    user_email:String,
+    user_phone:String,
+    user_password:String
+});
+
+module.exports = mongoose.model("users",userSchema);
+
+
+
+
+****In the file of index.js we write those code for send data through post man to mongoDB Table/collection***
+
+const express= require("express");
+require('./db/config');
+const User = require("./db/User");
+
+const app = express();
+
+app.use(express.json()); //for receive data from form
+
+//Routes
+app.post("/register",async (req,resp)=>{
+    let user= new User(req.body);
+    let result = await user.save();
+    resp.send(result);
+})
+
+
+
+app.listen(5000);
 
 
 
